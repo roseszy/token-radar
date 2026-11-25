@@ -2,7 +2,7 @@
 
 A token launch radar for the make.fun bounty **token-radar-01** — "Build the best token launch radar".
 
-It reads a sealed snapshot of every protocol DefiLlama tracks, works out which ones still record no token and are not a wrapped or staked product of one that trades, ranks them by what their launch would be worth, and hands in a web dashboard that shows the board, a detail view for each protocol, and the steps to farm it.
+It reads a sealed snapshot of every protocol DefiLlama tracks, finds the ones that still record no token and are not a wrapped or staked product of one that trades, ranks them by what a launch would be worth, and hands in a web dashboard with the board, a detail view for each protocol, and the steps to farm it.
 
 [![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 [![rank](https://make.fun/badge/token-radar-01/roseszy/token-radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
@@ -26,11 +26,11 @@ Implied value is derived from the snapshot's own figures only:
 implied_value = TVL × 0.25 × growth factor × maturity factor × breadth factor
 ```
 
-- **Growth factor** from the protocol's 7-day TVL change.
+- **Growth factor** from the protocol's 7-day TVL change, clamped to −60%..+120%.
 - **Maturity factor** from how long it has run with no token recorded.
 - **Breadth factor** from how many chains it serves.
 
-No protocol name is special-cased. The board separates protocols whose token already trades (shown in their own Live view by market cap) from those still to come. Implied values are estimates, not prices, and no launch is guaranteed.
+No protocol name is special-cased. The board keeps protocols whose token already trades apart (shown in their own Live view by market cap) from those still to come. Implied values are estimates, not prices, and no launch is guaranteed.
 
 ## Run it
 
